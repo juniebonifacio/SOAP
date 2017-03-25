@@ -1,0 +1,6 @@
+Reference: https://web-gmazza.rhcloud.com/blog/entry/web-service-tutorial
+Credits to the owner
+
+Endpoint:
+http://localhost:8080/TrunkCircuitOrderService/TrunkCircuitOrderService?wsdl
+

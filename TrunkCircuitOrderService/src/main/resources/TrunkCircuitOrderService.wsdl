@@ -1,0 +1,2045 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="TrunkCircuitOrderService"
+	targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/"
+	xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+	xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy"
+	xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract"
+	xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex"
+	xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+	<wsdl:types>
+		<xsd:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+			<xsd:element name="PutTrunkCircuitOrder">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element minOccurs="0" name="TrunkCircuitOrder"
+							nillable="true" type="q1:TrunkCircuit" xmlns:q1="http://inSwitch.honovi.net/types" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="PutTrunkCircuitOrderResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element minOccurs="0" name="PutTrunkCircuitOrderResult"
+							nillable="true" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CancelTrunkCircuitOrderProjectGroup">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element minOccurs="0" name="ProjectGroup"
+							nillable="true" type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="CancelTrunkCircuitOrderProjectGroupResponse">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element minOccurs="0"
+							name="CancelTrunkCircuitOrderProjectGroupResult" nillable="true"
+							type="xsd:string" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:schema>
+		<xs:schema attributeFormDefault="qualified"
+			elementFormDefault="qualified"
+			targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+			<xs:element name="anyType" nillable="true" type="xs:anyType" />
+			<xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+			<xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+			<xs:element name="boolean" nillable="true" type="xs:boolean" />
+			<xs:element name="byte" nillable="true" type="xs:byte" />
+			<xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+			<xs:element name="decimal" nillable="true" type="xs:decimal" />
+			<xs:element name="double" nillable="true" type="xs:double" />
+			<xs:element name="float" nillable="true" type="xs:float" />
+			<xs:element name="int" nillable="true" type="xs:int" />
+			<xs:element name="long" nillable="true" type="xs:long" />
+			<xs:element name="QName" nillable="true" type="xs:QName" />
+			<xs:element name="short" nillable="true" type="xs:short" />
+			<xs:element name="string" nillable="true" type="xs:string" />
+			<xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+			<xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+			<xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+			<xs:element name="unsignedShort" nillable="true"
+				type="xs:unsignedShort" />
+			<xs:element name="char" nillable="true" type="tns:char" />
+			<xs:simpleType name="char">
+				<xs:restriction base="xs:int" />
+			</xs:simpleType>
+			<xs:element name="duration" nillable="true" type="tns:duration" />
+			<xs:simpleType name="duration">
+				<xs:restriction base="xs:duration">
+					<xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+					<xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+					<xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:element name="guid" nillable="true" type="tns:guid" />
+			<xs:simpleType name="guid">
+				<xs:restriction base="xs:string">
+					<xs:pattern
+						value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+				</xs:restriction>
+			</xs:simpleType>
+			<xs:attribute name="FactoryType" type="xs:QName" />
+			<xs:attribute name="Id" type="xs:ID" />
+			<xs:attribute name="Ref" type="xs:IDREF" />
+		</xs:schema>
+		<xsd:schema elementFormDefault="qualified"
+			targetNamespace="http://inSwitch.honovi.net/types" xmlns:tns="http://inSwitch.honovi.net/types">
+			<xsd:complexType name="TrunkCircuit">
+				<xsd:annotation>
+					<xsd:appinfo />
+					<xsd:documentation>&lt;summary&gt;
+						Trunk Circuit Order
+						&lt;/summary&gt;</xsd:documentation>
+				</xsd:annotation>
+				<xsd:sequence>
+					<xsd:element name="ParentCompanyCode" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo />
+							<xsd:documentation>&lt;summary&gt;
+								ParentCompanyCode (string) is a unique company identifier, usually four numeric
+								characters (e.g. 7433)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="OrderCode" nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo />
+							<xsd:documentation>&lt;summary&gt;
+								OrderCode (string) is some sort of ID unique to each Trunk Circuit Order
+								(e.g. FOX123456-1, NPRI1234)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="VersionNumber" type="xsd:int">
+						<xsd:annotation>
+							<xsd:appinfo />
+							<xsd:documentation>&lt;summary&gt;
+								VersionNumber (int) is used for to track updating existing Trunk Circuit
+								Orders (e.g. 10, could use date to tics)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="Action" nillable="true" type="tns:ActionType">
+						<xsd:annotation>
+							<xsd:appinfo />
+							<xsd:documentation>&lt;summary&gt;
+								Action (ActionType) What action will be applied to this Trunk Circuit
+								(e.g. Activate, Disconnect, Establish)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="OperationalSupportSystem" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo />
+							<xsd:documentation>&lt;summary&gt;
+								OperationalSupportSystem (string,static) Indicates which inSwitch system will process
+								each Trunk Circuit Order
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="ASROrder" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								ASROrder (string) Access Service Order
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="PlantDueDate"
+						nillable="true" type="xsd:dateTime">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								PlantReadyDate (DateTime)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="DueDate" nillable="true"
+						type="xsd:dateTime">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								DueDate (DateTime)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="ReleaseDate" nillable="true"
+						type="xsd:dateTime">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								ReleaseDate (DateTime)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="TGSN" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								TGSN (string) Trunk Group Serial Number
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="TwoSix" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								TwoSix (string)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="TrafficClass"
+						nillable="true" type="tns:TrafficClassType">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								TrafficClass (TrafficClassType) Indicates the Traffic Class of the Trunk
+								Circuit (e.g. AdvancedFinal, DirectFinal)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="TrafficUse" nillable="true"
+						type="tns:TrafficUseType">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								TrafficUse (TrafficUseType) Indicates the Traffic Use for the Trunk
+								Circuit (e.g. OperatorServiceCP, TandemAccessCAMA)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="Modifier" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								Modifier (string)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="TrunkBitRate"
+						nillable="true" type="tns:TrunkBitRateType">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								TrunkBitRate (TrunkBitRateType) Indicates the bit rate of the Trunk Circuit
+								(note appended with r in front, periods replaced with
+								underscores (e.g. r64K, r2_488320G)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="ActualSize" nillable="true"
+						type="xsd:int">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								ActualSize (int) Total size AFTER the order is worked
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="INAC" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								INAC (string)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="Note" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								Note (string) Remark, note, or additional processing instructions
+								for a Trunk Circuit Order
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="CustomerName"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								CustomerName (string) End Customer for the Trunk Circuit Order
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="CustomerID" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								CustomerID (string) End Customer Identifier Code
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="CICCode" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								CICCode (string)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="SIPIndicator" type="xsd:boolean">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								SIPIndicator (boolean) Indicates a SIP/IPT Trunk Circuit
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="CLCI" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								CLCI (string) Common Language Equipment Identifier
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="PartialActionIndicator"
+						type="xsd:boolean">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								PartialActionIndicator (boolean) Indicates a partial or full action (like partial or
+								full disconnect)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="PRICircuitIndicator"
+						type="xsd:boolean">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								PRICircuitIndicator (boolean) Indicates a PRI Trunk Curcuit Order
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="GlareYieldCode"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								GlareYieldCode (string) used to process what yields to glare
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="OrderSize" nillable="true"
+						type="xsd:int">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								OrderSize (int) The number of sessions or trunk members on this order
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="ProjectGroup"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								ProjectGroup (string) An identifier used to group associated inSwitch
+								activities / projects together
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="TrunkFeature" nillable="true"
+						type="tns:TrunkFeature">
+						<xsd:annotation>
+							<xsd:appinfo />
+							<xsd:documentation>&lt;summary&gt;
+								Features of the A or Z side Switch that will received updated
+								translations (object)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="ASideSwitch" nillable="true" type="tns:Switch">
+						<xsd:annotation>
+							<xsd:appinfo />
+							<xsd:documentation>&lt;summary&gt;
+								ASideSwitch (object) Switch Host CLLI or Alias
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="ZSideSwitch" nillable="true" type="tns:Switch">
+						<xsd:annotation>
+							<xsd:appinfo />
+							<xsd:documentation>&lt;summary&gt;
+								ZSideSwitch (object) Switch Host CLLI or Alias
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="ServiceApplicationServerList"
+						nillable="true" type="tns:ArrayOfServiceApplicationServer">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								List of Service Application Servers (array of objects)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="TrunkCircuit" nillable="true"
+				type="tns:TrunkCircuit" />
+			<xsd:simpleType name="ActionType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Activate" />
+					<xsd:enumeration value="Disconnect" />
+					<xsd:enumeration value="Establish" />
+					<xsd:enumeration value="Inactivate" />
+					<xsd:enumeration value="Modify" />
+					<xsd:enumeration value="MinPrMthCancel" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:element name="ActionType" nillable="true" type="tns:ActionType" />
+			<xsd:simpleType name="TrafficClassType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="AdvancedFinal" />
+					<xsd:enumeration value="DirectFinal" />
+					<xsd:enumeration value="NonhierarchialRouting" />
+					<xsd:enumeration value="ExpedientRouteAF" />
+					<xsd:enumeration value="ParallelProtectiveHigh" />
+					<xsd:enumeration value="IntermediateHigh" />
+					<xsd:enumeration value="Administrative" />
+					<xsd:enumeration value="NetworkManagement" />
+					<xsd:enumeration value="PrimaryHigh" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:element name="TrafficClassType" nillable="true"
+				type="tns:TrafficClassType" />
+			<xsd:simpleType name="TrafficUseType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Announcement" />
+					<xsd:enumeration value="OperatorServiceAP" />
+					<xsd:enumeration value="TandemAccessCAMA" />
+					<xsd:enumeration value="OperatorServiceCP" />
+					<xsd:enumeration value="CoinSupervisory" />
+					<xsd:enumeration value="TandemConnectingCAMA" />
+					<xsd:enumeration value="ConeZone" />
+					<xsd:enumeration value="DirectoryAssistance" />
+					<xsd:enumeration value="InteractiveServicesAccess" />
+					<xsd:enumeration value="TandemAccessLAMA" />
+					<xsd:enumeration value="TandemConnectingLAMA" />
+					<xsd:enumeration value="DirectInterLATAFGB" />
+					<xsd:enumeration value="DirectInterLATAFGD" />
+					<xsd:enumeration value="DirectConnectingRadio" />
+					<xsd:enumeration value="CellularMobileDirectConnecting" />
+					<xsd:enumeration value="MobileEmergencyCallRouting" />
+					<xsd:enumeration value="CellularOperatingConnecting" />
+					<xsd:enumeration value="IntertandemCellular" />
+					<xsd:enumeration value="EmergencyService" />
+					<xsd:enumeration value="EmergencyServiceEnhanced" />
+					<xsd:enumeration value="EndOfficeTandem" />
+					<xsd:enumeration value="DirectIntraLATA2Way" />
+					<xsd:enumeration value="FeatureActivationSwitchOrPeripheral" />
+					<xsd:enumeration value="FeatureActivationPeripheralOrPeripheral" />
+					<xsd:enumeration value="FeatureActivationPeripheralOrWireless" />
+					<xsd:enumeration value="EndOfficeTrunkGateway" />
+					<xsd:enumeration value="CustomerSwitchExchangeCarrierGateway" />
+					<xsd:enumeration value="CustomerSwitchExchangeCarrierTandem" />
+					<xsd:enumeration value="CustomerSwitchExchangeCarrierEndOffice" />
+					<xsd:enumeration value="CustomerSwitchExchangeCarrierTandemOS" />
+					<xsd:enumeration value="CustomerSwitchExchangeCarrierEndOfficeOS" />
+					<xsd:enumeration value="CustomerSwitchExchangeCarrierE911Tandem" />
+					<xsd:enumeration value="TandemTrunkGateway" />
+					<xsd:enumeration value="IntraendOffice" />
+					<xsd:enumeration value="InterendOffice" />
+					<xsd:enumeration value="InterendOfficeMarker" />
+					<xsd:enumeration value="OperatorServiceIP" />
+					<xsd:enumeration value="Intercept" />
+					<xsd:enumeration value="InterendOfficeCodeSharing" />
+					<xsd:enumeration value="IntertandemToll" />
+					<xsd:enumeration value="IntraendOfficeJunctor" />
+					<xsd:enumeration value="IntratandemLoopAround" />
+					<xsd:enumeration value="TrunkwithLineTreatmentTWLT" />
+					<xsd:enumeration value="OperatorAccessCallback" />
+					<xsd:enumeration value="MixedFeatureGroupB" />
+					<xsd:enumeration value="TandemAccessMixedFGD" />
+					<xsd:enumeration value="Miscellaneous" />
+					<xsd:enumeration value="OperatorAccessManual" />
+					<xsd:enumeration value="HighSpeedMessagePipe" />
+					<xsd:enumeration value="ImprovedMobileTelephoneService" />
+					<xsd:enumeration value="IntertandemLocal" />
+					<xsd:enumeration value="TandemIntraLATAConnecting" />
+					<xsd:enumeration value="TandemInterLATAConnecting" />
+					<xsd:enumeration value="TandemConnecting" />
+					<xsd:enumeration value="NetworkServices" />
+					<xsd:enumeration value="OperatorAccessOperatorAssistance" />
+					<xsd:enumeration value="OperatorFeatureGroupD" />
+					<xsd:enumeration value="OperatorAssisted" />
+					<xsd:enumeration value="Official" />
+					<xsd:enumeration value="TandemConnectingLocal2Way" />
+					<xsd:enumeration value="TandemAccessOperatorJunctor" />
+					<xsd:enumeration value="OperatorConnecting2Way" />
+					<xsd:enumeration value="OpticalRemote" />
+					<xsd:enumeration value="Overseas" />
+					<xsd:enumeration value="PublicAnnouncement" />
+					<xsd:enumeration value="Paging" />
+					<xsd:enumeration value="PrimaryRateISDN" />
+					<xsd:enumeration value="PacketSwitch" />
+					<xsd:enumeration value="PermanentSignal" />
+					<xsd:enumeration value="AccessTesting" />
+					<xsd:enumeration value="RepairServiceandBusinessOffice" />
+					<xsd:enumeration value="OperatorAccessRecordingCompleting" />
+					<xsd:enumeration value="RequestedInformation" />
+					<xsd:enumeration value="RemoteSwitchChannelVoice" />
+					<xsd:enumeration value="RemoteSwitchHICAPConnection" />
+					<xsd:enumeration value="RateandRoute" />
+					<xsd:enumeration value="RepairService" />
+					<xsd:enumeration value="SignalingLink" />
+					<xsd:enumeration value="SignalingLinkAccessPurchased" />
+					<xsd:enumeration value="SignalingLinkNonAccessPurchased" />
+					<xsd:enumeration value="TandemAccessServicePosition" />
+					<xsd:enumeration value="TandemInterLATAConnectingFGB" />
+					<xsd:enumeration value="TandemCompletingToll" />
+					<xsd:enumeration value="TandemInterLATAConnectingFGD" />
+					<xsd:enumeration value="InterendOfficeToll" />
+					<xsd:enumeration value="CellularMobileTandemConnecting" />
+					<xsd:enumeration value="TandemCompletingLocal" />
+					<xsd:enumeration value="ServicePlatformTandemConnecting" />
+					<xsd:enumeration value="Time" />
+					<xsd:enumeration value="TandemCompletingMultipled" />
+					<xsd:enumeration value="TandemAccessLocal" />
+					<xsd:enumeration value="OperatorServiceTP" />
+					<xsd:enumeration value="OperatorCompleting" />
+					<xsd:enumeration value="TandemAccessOperatorSwitched" />
+					<xsd:enumeration value="TandemIntraLATAConnecting2Way" />
+					<xsd:enumeration value="VacentCodeOperatorOnly" />
+					<xsd:enumeration value="Verification" />
+					<xsd:enumeration value="VoiceStorage" />
+					<xsd:enumeration value="Weather" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:element name="TrafficUseType" nillable="true"
+				type="tns:TrafficUseType" />
+			<xsd:simpleType name="TrunkBitRateType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="r56K" />
+					<xsd:enumeration value="r64K" />
+					<xsd:enumeration value="r2_488320G" />
+					<xsd:enumeration value="r90M" />
+					<xsd:enumeration value="r44_736M" />
+					<xsd:enumeration value="r100M" />
+					<xsd:enumeration value="r155_520M" />
+					<xsd:enumeration value="r38_4K" />
+					<xsd:enumeration value="r128K" />
+					<xsd:enumeration value="r144K" />
+					<xsd:enumeration value="r622_080M" />
+					<xsd:enumeration value="r192K" />
+					<xsd:enumeration value="r22_368M" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:element name="TrunkBitRateType" nillable="true"
+				type="tns:TrunkBitRateType" />
+			<xsd:complexType name="TrunkFeature">
+				<xsd:annotation>
+					<xsd:appinfo />
+					<xsd:documentation>&lt;summary&gt;
+						Trunk Circuit Feature
+						&lt;/summary&gt;</xsd:documentation>
+				</xsd:annotation>
+				<xsd:sequence>
+					<xsd:element name="AZCode" nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo />
+							<xsd:documentation>&lt;summary&gt;
+								AZCode (string) 1 char code to indicate which to or from switch (e.g.
+								A or Z)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="PRIType" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								PRIType (string) To be displayed in inSwitch to help select a template
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="PRIQuantity" nillable="true"
+						type="xsd:short">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								PRIQuantity (Int16) Quantity of PRIs for this order
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="NI" nillable="true"
+						type="xsd:unsignedByte">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								NI (byte) ISDN NI Type (1 or 2)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="FacilityAssignedIndicator"
+						nillable="true" type="xsd:boolean">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								Determines if the PRI is Facility Assigned (FAS) or Network
+								Facility Assigned (NFAS). FAS required each T1 to have its
+								on D channel. NFAS shares a primary D channel and possibly a
+								backup D channel for all circuits. Primary is put on first
+								trunk circuit and backup is put on second circuit (if backup
+								is required).
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="BackupDChannelIndicator"
+						nillable="true" type="xsd:boolean">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								For NFAS only, determines if a backup D channel is provisioned.
+								If TRUE, then the second circuit is provisioned with as the
+								backup D channel.
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="Direction" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								Direction (string) todo
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="HuntSequence"
+						nillable="true" type="tns:HuntSequenceType">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								HuntSequence (string)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="CallerIDScreeningIndicator"
+						nillable="true" type="xsd:boolean">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								Determines if caller id screening is performed on
+								calls originating from PBX to Network. If screening
+								is enabled, then number received from PBX is checked against
+								as screening list of valid phone numbers for origination
+								from PBX. Each switch technologies handles the screening
+								lookup differently.
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="CallerNumberDeliverIndicator"
+						nillable="true" type="xsd:boolean">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								Deliver from PBX to Network of Calling Number.
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="CallingNameDeliverIndicator"
+						nillable="true" type="xsd:boolean">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								Deliver from PBX to Network of Calling Name. This is
+								usually determined by LIDB DIP of calling number.
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="CallingNumberInBoundIndicator"
+						nillable="true" type="xsd:boolean">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								From Network to PBX of Calling Number information.
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="CallingNameInBoundIndicator"
+						nillable="true" type="xsd:boolean">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								From Network to PBX of Calling Name information.
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="StationBillingIndicator"
+						nillable="true" type="xsd:boolean">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								Station Level billing is where the origination station number
+								is what is actually put on billing AMA. Normally this is
+								based on a screening list, so trcf_caller_id_screening_flag
+								would be TRUE.
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="TwoBTransferIndicator"
+						nillable="true" type="xsd:boolean">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								Two B Channel Transfer (TBCT is popular acronym). This is
+								and NI2 feature
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="ReleaseLinkIndicator"
+						nillable="true" type="xsd:boolean">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								Release Link Transfer. This is an NI1 feature. Similar to 2B Transfer.
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="BillingDN" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								'N/A' = Disabled, Null = No change, 10 digit number = Enabled.
+								Billing number. This would normally be on the Trunk Group
+								Billing Number
+								field. May also appear in certain technologies on the SFG/VFG.
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="PilotDN" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								Pilot DN is the lead number of a route into the PBX. This number
+								would appear in the DN list from TRCN. It is not used in regular
+								translations of the circuit.
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="AlternateDN" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								'N/A' = Disabled, Null = No change, 10 digit number = Enabled.
+								Alternate Directory Number that would be sent out for Caller ID
+								purposes,
+								when station level display is not used.
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="OverflowDN" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								'N/A' = Disabled, Null = No change, 10 digit number = Enabled.
+								DN that traffic should be routed to when SFG/VFG is full. SFG/VFG
+								is required
+								for this. Normally this DN is same as Emergency DN.
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="EmergencyDN" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								'N/A' = Disabled, Null = No change, 10 digit number = Enabled.
+								DN that traffic should be sent to when ALL trunks are busy. This
+								is used to
+								build and overflow route to DN and this route is added to last trunk
+								group in
+								route list (which is normally the first Trunk since routes are built
+								from
+								highest trunk in circuit list to lowest.
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="PBXEquipment"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								PBX Equipment Code (string)
+								Indicates what PBX Equipment Profile to use for order processing
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="SL100ProfileIndicator"
+						nillable="true" type="xsd:boolean">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								SL100ProfileIndicator (boolean)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="PICCode" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								PICCode (string) Presubscribed Interexchange Carrier code
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="TwoPICCode" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								TwoPICCode (string) 2PICCode
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="GroupInboundSize"
+						nillable="true" type="xsd:short">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								Size of the inbound group when building SFGs. If this size
+								matches the number of trunk members installed, then no
+								SFG is typically needed.
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="GroupOutBoundSize"
+						nillable="true" type="xsd:short">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								Size of the outbound group when building SFGs. If this size
+								matches the number of trunk members installed, then no
+								SFG is typically needed.
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="BidirectionalSizeIndicator"
+						type="xsd:boolean">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								Indicates if the Group Inbound and Outbound Sizes are Bidirectional.
+								This means that the size is shared between the inbound and outbound
+								directions. If NOT bidirectional, then an SFG would be needed to
+								limit the inbound and outbound traffic to there specific size.
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="CallingDisplayChangeIndicator"
+						type="xsd:boolean">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								Indicates if any of the Calling Name/Number In/Out fields
+								are changing as part of this order. This is determined by
+								comparison of the account history and the new order during
+								the interface receipt of the order.
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="PBXShortName"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								PBXShortName (string)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="PBXLongName" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								PBXLongName (string)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="DedicatedRealmIndicator"
+						nillable="true" type="xsd:boolean">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								DedicatedRealmIndicator (boolean)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="ServiceDomainName"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								ServiceDomainName (string)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="ServiceUserName"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								ServiceUserName (string)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="ServicePassword"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								ServicePassword (string)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="ServicePackage"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								ServicePackage (string)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="ApplicationServerName"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								ApplicationServerName (string) - Application Server Name
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="SessionManagerName"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								SessionManagerName (string) - Session Manager Name
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="TrustedIPAddress"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								TrustedIPAddress (string) - Trusted IP Address
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="TrustedRealmName"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								TrustedRealmName (string) - Trusted Realm Name
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="UntrustedIPAddress"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								UntrustedIPAddress (string) - Untrusted IP Address
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="UntrustedRealmName"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								UntrustedRealmName (string) - Untrusted Realm Name
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="AgentOneIPAddress"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="AgentTwoIPAddress"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								AgentTwoIPAddress (string) - Secondary (Backup) Customer PBX IP Address
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="DNISIndicator"
+						nillable="true" type="xsd:boolean">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								DNISIndicator (boolean)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="FailoverOptionDescription"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								FailoverOptionDescription (string) - Failover Option Description
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="CallDistributionOption"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								CallDistributionOption (string) - Call Distribution Option
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="TLSIndicator"
+						nillable="true" type="xsd:boolean">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								TLSIndicator (optional bool) - TLS Indicator
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="AccessTypeDescription"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								AccessTypeDescription (String 50) Optional (“MPLS”, “Internet Access”, …)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="DNList" nillable="true"
+						type="tns:ArrayOfDN">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								List of DNs for affected Trunk Circuit (array of objects)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="TrunkFeature" nillable="true"
+				type="tns:TrunkFeature" />
+			<xsd:simpleType name="HuntSequenceType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="LeastIdle" />
+					<xsd:enumeration value="MostIdle" />
+					<xsd:enumeration value="AscendingSequential" />
+					<xsd:enumeration value="DescendingSequential" />
+					<xsd:enumeration value="AscendingSequentialFromLastReleased" />
+					<xsd:enumeration value="DescendingSequentialFromLastReleased" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:element name="HuntSequenceType" nillable="true"
+				type="tns:HuntSequenceType" />
+			<xsd:complexType name="ArrayOfDN">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" maxOccurs="unbounded" name="DN"
+						nillable="true" type="tns:DN" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="ArrayOfDN" nillable="true" type="tns:ArrayOfDN" />
+			<xsd:complexType name="DN">
+				<xsd:annotation>
+					<xsd:appinfo />
+					<xsd:documentation>&lt;summary&gt;
+						DNs
+						&lt;/summary&gt;</xsd:documentation>
+				</xsd:annotation>
+				<xsd:sequence>
+					<xsd:element minOccurs="0" name="NPA" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								NPA (String) Numbering Plan Area Code (e.g. 602)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="NXX" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								NXX (String) Central Office (exchange) code (e.g. 862)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="LineNumber" nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								LineNumber (String) Subscriber Number [0–9] for each of the four digits
+								(e.g. 8347)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="Action" nillable="true"
+						type="tns:NumberActionType">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								Action (NumberActionType) B, D, E, I, M, O or R
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="ServiceType" nillable="true"
+						type="tns:PRIDNType">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								ServiceType (PRIDNType)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="Quantity" nillable="true"
+						type="xsd:short">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								Quantity (Int16) Quantity of PRIs for this order
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="PortedIndicator" type="xsd:boolean">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								PortedIndicator (boolean)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="GroupNumber" nillable="true"
+						type="xsd:int">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								GroupNumber (Int) Identifier of a Virtual Group needed for a set of DN's
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="GroupSize" nillable="true"
+						type="xsd:short">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								GroupSize (Int16) The size of the Virtual Group
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="ServiceID" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								ServiceID (String) Name of the Virtual Group (DID582)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="DeleteDigits"
+						nillable="true" type="xsd:int">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								DeleteDigits (int) Leading digits to delete
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="PrefixDigits"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								PrefixDigits (string) Leading digits to add
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="ReplaceDigits"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								ReplaceDigits (string) Replaces any existing digits with these digits
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="SentDigits" nillable="true"
+						type="xsd:unsignedByte">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								SentDigits (string)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="CircuitBaseCode"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								CircuitBaseCode (String) Circuit base id plus starting suffix (e.g.
+								12/IPCD/123456/001)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="CircuitSuffixArray"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								CircuitSuffixArray (string) Circuit suffix comma seperated list (e.g. 1,2,3)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="DN" nillable="true" type="tns:DN" />
+			<xsd:simpleType name="NumberActionType">
+				<xsd:annotation>
+					<xsd:appinfo />
+				</xsd:annotation>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="BTN">
+						<xsd:annotation>
+							<xsd:documentation>&lt;summary&gt;
+								BTN
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="Disconnect">
+						<xsd:annotation>
+							<xsd:documentation>&lt;summary&gt;
+								Disconnect, Cancel/Remove, Terminate
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="Establish">
+						<xsd:annotation>
+							<xsd:documentation>&lt;summary&gt;
+								New, Activate, Establish
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="PortIn">
+						<xsd:annotation>
+							<xsd:documentation>&lt;summary&gt;
+								Port In
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="Change">
+						<xsd:annotation>
+							<xsd:documentation>&lt;summary&gt;
+								Change, Conversion, Modify
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="PortOut">
+						<xsd:annotation>
+							<xsd:documentation>&lt;summary&gt;
+								Port Out
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+					<xsd:enumeration value="Reserve">
+						<xsd:annotation>
+							<xsd:documentation>&lt;summary&gt;
+								Retain, Reserve DID
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:enumeration>
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:element name="NumberActionType" nillable="true"
+				type="tns:NumberActionType" />
+			<xsd:simpleType name="PRIDNType">
+				<xsd:annotation>
+					<xsd:appinfo>
+						<ActualType Name="unsignedByte" Namespace="http://www.w3.org/2001/XMLSchema"
+							xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+					</xsd:appinfo>
+				</xsd:annotation>
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Unknown" />
+					<xsd:enumeration value="DirectInwardDial" />
+					<xsd:enumeration value="DirectOutwardDial" />
+					<xsd:enumeration value="Incoming" />
+					<xsd:enumeration value="Outgoing" />
+					<xsd:enumeration value="Tollfree" />
+					<xsd:enumeration value="Pilot" />
+					<xsd:enumeration value="BillNumber" />
+					<xsd:enumeration value="TestNumber" />
+					<xsd:enumeration value="OverDN" />
+					<xsd:enumeration value="EmergencyDN" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:element name="PRIDNType" nillable="true" type="tns:PRIDNType" />
+			<xsd:complexType name="Switch">
+				<xsd:annotation>
+					<xsd:appinfo />
+					<xsd:documentation>&lt;summary&gt;
+						Trunk Switch
+						&lt;/summary&gt;</xsd:documentation>
+				</xsd:annotation>
+				<xsd:sequence>
+					<xsd:element name="SwitchCLLI" nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo />
+							<xsd:documentation>&lt;summary&gt;
+								SwitchCLLI (string) Switch CLLI
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="CLCISwitchCLLI"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								CLLI (string) Customer Switch CLLI code
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="TrunkGroupName"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="TrunkGroupNumber"
+						nillable="true" type="xsd:int">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="AddressSignaling"
+						nillable="true" type="tns:AddressSignalingType">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								AddressSignaling (string)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="NetworkNumber"
+						nillable="true" type="xsd:unsignedByte">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								NetworkNumber (Byte) First integer of point-code sequence
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="ClusterNumber"
+						nillable="true" type="xsd:unsignedByte">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								ClusterNumber (Byte) Second integer of point-code sequence
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="MemberNumber"
+						nillable="true" type="xsd:unsignedByte">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								MemberNumber (Byte) Third integer of point-code sequence
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="EchoCanceller"
+						nillable="true" type="tns:EchoCancellerType">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="OfficeClass" nillable="true"
+						type="tns:OfficeClassType">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								OfficeClass (OfficeClassType) Indicates the Office Class (e.g. Class1,
+								Class3)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="HuntSequence"
+						nillable="true" type="tns:HuntSequenceType">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								Hunt Sequence types are unique to a switch technology. These types
+								will be converted to most appropriate value for the technology
+								of the switch. These are DMS100 Family types. So LIDL in a 5ESS
+								would be FIFO, MIDL in 5ESS would be MLIDL, etc.
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="CustomerServiceID"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								CustomerServiceID (String) - An optional customer ID relating to individual
+								services
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="EquipmentList"
+						nillable="true" type="tns:ArrayOfEquipment">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								Holds the child records for physical trunk equipment associated
+								with this switch
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="Switch" nillable="true" type="tns:Switch" />
+			<xsd:simpleType name="AddressSignalingType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="NoSignaling" />
+					<xsd:enumeration value="R1SignalingSystem" />
+					<xsd:enumeration value="R2SignalingSystem" />
+					<xsd:enumeration value="CCITT5Signaling" />
+					<xsd:enumeration value="CCITT6Signaling" />
+					<xsd:enumeration value="ANSIT1X1SS7" />
+					<xsd:enumeration value="Automatic" />
+					<xsd:enumeration value="CCITTSS7" />
+					<xsd:enumeration value="CommonChannelCCIS" />
+					<xsd:enumeration value="DialPulse" />
+					<xsd:enumeration value="EnhancedMF" />
+					<xsd:enumeration value="FrequencyShift" />
+					<xsd:enumeration value="BearerIndependentBICC" />
+					<xsd:enumeration value="CCITTSS7ISUP" />
+					<xsd:enumeration value="DTMF12Combinations" />
+					<xsd:enumeration value="DTMF16Combinations" />
+					<xsd:enumeration value="MultifrequencyPulse" />
+					<xsd:enumeration value="NonSpecific" />
+					<xsd:enumeration value="PanelCallIndicatorPCI" />
+					<xsd:enumeration value="RingDown" />
+					<xsd:enumeration value="Straightforward" />
+					<xsd:enumeration value="Reveritive" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:element name="AddressSignalingType" nillable="true"
+				type="tns:AddressSignalingType" />
+			<xsd:simpleType name="EchoCancellerType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="EXTERNAL" />
+					<xsd:enumeration value="INNOTONE" />
+					<xsd:enumeration value="INTERNAL" />
+					<xsd:enumeration value="UNEQ" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:element name="EchoCancellerType" nillable="true"
+				type="tns:EchoCancellerType" />
+			<xsd:simpleType name="OfficeClassType">
+				<xsd:restriction base="xsd:string">
+					<xsd:enumeration value="Undefined" />
+					<xsd:enumeration value="Class1" />
+					<xsd:enumeration value="Class2" />
+					<xsd:enumeration value="Class3" />
+					<xsd:enumeration value="Class4" />
+					<xsd:enumeration value="Class5" />
+					<xsd:enumeration value="NPTandem" />
+					<xsd:enumeration value="NPTDMOrNonTDM" />
+					<xsd:enumeration value="Gateway" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:element name="OfficeClassType" nillable="true"
+				type="tns:OfficeClassType" />
+			<xsd:complexType name="ArrayOfEquipment">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" maxOccurs="unbounded" name="Equipment"
+						nillable="true" type="tns:Equipment" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="ArrayOfEquipment" nillable="true"
+				type="tns:ArrayOfEquipment" />
+			<xsd:complexType name="Equipment">
+				<xsd:annotation>
+					<xsd:appinfo />
+					<xsd:documentation>&lt;summary&gt;
+						Switch Equipment
+						&lt;/summary&gt;</xsd:documentation>
+				</xsd:annotation>
+				<xsd:sequence>
+					<xsd:element name="LenType" nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element name="LowLen" nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="Quantity" nillable="true"
+						type="xsd:int">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="LowMember" nillable="true"
+						type="xsd:int">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="LowCIC" nillable="true"
+						type="xsd:int">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="CircuitCode" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								CircuitCode (string) Circuit Number e.g. 06/IPCD/123456/001
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="Equipment" nillable="true" type="tns:Equipment" />
+			<xsd:complexType name="ArrayOfServiceApplicationServer">
+				<xsd:sequence>
+					<xsd:element minOccurs="0" maxOccurs="unbounded"
+						name="ServiceApplicationServer" nillable="true"
+						type="tns:ServiceApplicationServer" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="ArrayOfServiceApplicationServer"
+				nillable="true" type="tns:ArrayOfServiceApplicationServer" />
+			<xsd:complexType name="ServiceApplicationServer">
+				<xsd:annotation>
+					<xsd:appinfo />
+					<xsd:documentation>&lt;summary&gt;
+						Service Application Server
+						&lt;/summary&gt;</xsd:documentation>
+				</xsd:annotation>
+				<xsd:sequence>
+					<xsd:element name="ApplicationServerName" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								Application Server Name (String) Expecting IP Address
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="TrustedIPAddress"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								SBC Trusted IP Addressess (String)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="TrustedRealmName"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								SBC Trusted IP Addressess (String)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="UntrustedIPAddress"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								SBC Trusted IP Addressess (String)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="UntrustedRealmName"
+						nillable="true" type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								SBC Trusted IP Addressess (String)
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+					<xsd:element minOccurs="0" name="RegionCode" nillable="true"
+						type="xsd:string">
+						<xsd:annotation>
+							<xsd:appinfo>
+								<DefaultValue EmitDefaultValue="false"
+									xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+							</xsd:appinfo>
+							<xsd:documentation>&lt;summary&gt;
+								RegionCode (String) Possible values: ‘E’ for east, ‘W’ for west, ‘N’ for
+								national
+								&lt;/summary&gt;</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="ServiceApplicationServer" nillable="true"
+				type="tns:ServiceApplicationServer" />
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message
+		name="ITrunkCircuitOrderService_PutTrunkCircuitOrder_InputMessage">
+		<wsdl:part name="parameters" element="tns:PutTrunkCircuitOrder" />
+	</wsdl:message>
+	<wsdl:message
+		name="ITrunkCircuitOrderService_PutTrunkCircuitOrder_OutputMessage">
+		<wsdl:part name="parameters" element="tns:PutTrunkCircuitOrderResponse" />
+	</wsdl:message>
+	<wsdl:message
+		name="ITrunkCircuitOrderService_CancelTrunkCircuitOrderProjectGroup_InputMessage">
+		<wsdl:part name="parameters" element="tns:CancelTrunkCircuitOrderProjectGroup" />
+	</wsdl:message>
+	<wsdl:message
+		name="ITrunkCircuitOrderService_CancelTrunkCircuitOrderProjectGroup_OutputMessage">
+		<wsdl:part name="parameters"
+			element="tns:CancelTrunkCircuitOrderProjectGroupResponse" />
+	</wsdl:message>
+	<wsdl:portType name="ITrunkCircuitOrderService">
+		<wsdl:documentation>&lt;summary&gt;&#xD;
+			Trunk Circuit Order Service receives trunk circuit order data for
+			processing&#xD;
+			&lt;/summary&gt;</wsdl:documentation>
+		<wsdl:operation name="PutTrunkCircuitOrder">
+			<wsdl:documentation>&lt;summary&gt;&#xD;
+				This operation saves the Trunk Circuit Order to inSwitch for
+				processing&#xD;
+				&lt;/summary&gt;&#xD;
+				&lt;param name="TrunkCircuitOrder"&gt;&lt;/param&gt;&#xD;
+				&lt;returns&gt;&lt;/returns&gt;</wsdl:documentation>
+			<wsdl:input
+				wsaw:Action="http://tempuri.org/ITrunkCircuitOrderService/PutTrunkCircuitOrder"
+				message="tns:ITrunkCircuitOrderService_PutTrunkCircuitOrder_InputMessage" />
+			<wsdl:output
+				wsaw:Action="http://tempuri.org/ITrunkCircuitOrderService/PutTrunkCircuitOrderResponse"
+				message="tns:ITrunkCircuitOrderService_PutTrunkCircuitOrder_OutputMessage" />
+		</wsdl:operation>
+		<wsdl:operation name="CancelTrunkCircuitOrderProjectGroup">
+			<wsdl:documentation>&lt;summary&gt;&#xD;
+				This operation cancels a Trunk Circuit Order Group in inSwitch &#xD;
+				&lt;/summary&gt;&#xD;
+				&lt;param name="OrderGroupName"&gt;&lt;/param&gt;&#xD;
+				&lt;returns&gt;&lt;/returns&gt;</wsdl:documentation>
+			<wsdl:input
+				wsaw:Action="http://tempuri.org/ITrunkCircuitOrderService/CancelTrunkCircuitOrderProjectGroup"
+				message="tns:ITrunkCircuitOrderService_CancelTrunkCircuitOrderProjectGroup_InputMessage" />
+			<wsdl:output
+				wsaw:Action="http://tempuri.org/ITrunkCircuitOrderService/CancelTrunkCircuitOrderProjectGroupResponse"
+				message="tns:ITrunkCircuitOrderService_CancelTrunkCircuitOrderProjectGroup_OutputMessage" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="BasicHttpBinding_ITrunkCircuitOrderService"
+		type="tns:ITrunkCircuitOrderService">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="PutTrunkCircuitOrder">
+			<soap:operation
+				soapAction="http://tempuri.org/ITrunkCircuitOrderService/PutTrunkCircuitOrder"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="CancelTrunkCircuitOrderProjectGroup">
+			<soap:operation
+				soapAction="http://tempuri.org/ITrunkCircuitOrderService/CancelTrunkCircuitOrderProjectGroup"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="TrunkCircuitOrderService">
+		<wsdl:port name="BasicHttpBinding_ITrunkCircuitOrderService"
+			binding="tns:BasicHttpBinding_ITrunkCircuitOrderService">
+			<soap:address
+				location="http://localhost:8080/TrunkCircuitOrderService/TrunkCircuitOrderService?wsdl" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
