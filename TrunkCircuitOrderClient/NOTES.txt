@@ -1,0 +1,3 @@
+How to create a WSDL-first SOAP client in Java with CXF and Maven:
+
+http://www.logicsector.com/java/how-to-create-a-wsdl-first-soap-client-in-java-with-cxf-and-maven/

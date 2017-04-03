@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="c7b4a40c-55fb-407e-9416-5f3ce893a866" activeEnvironment="Default" name="TrunkCircuitOrderService" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="8201a0ba-fcdf-4ed4-97cf-e9b59c136e53" wsaVersion="NONE" name="TrunkCircuitOrderServiceSoapBinding" type="wsdl" bindingName="{http://tempuri.org/}TrunkCircuitOrderServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/TrunkCircuitOrderService/TrunkCircuitOrderService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/TrunkCircuitOrderService/TrunkCircuitOrderService?wsdl"><con:part><con:url>http://localhost:8080/TrunkCircuitOrderService/TrunkCircuitOrderService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="TrunkCircuitOrderService" targetNamespace="http://tempuri.org/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="CancelTrunkCircuitOrderProjectGroup">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="ProjectGroup" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CancelTrunkCircuitOrderProjectGroupResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="CancelTrunkCircuitOrderProjectGroupResult" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PutTrunkCircuitOrder">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="TrunkCircuitOrder" type="ns1:TrunkCircuit" xmlns:ns1="http://inSwitch.honovi.net/types"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PutTrunkCircuitOrderResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="PutTrunkCircuitOrderResult" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="QName" type="xs:QName"/>
+      <xs:element name="anyType" type="xs:anyType"/>
+      <xs:element name="anyURI" type="xs:string"/>
+      <xs:element name="base64Binary" type="xs:base64Binary"/>
+      <xs:element name="boolean" type="xs:boolean"/>
+      <xs:element name="byte" type="xs:byte"/>
+      <xs:element name="char" type="xs:int"/>
+      <xs:element name="dateTime" type="xs:anySimpleType"/>
+      <xs:element name="decimal" type="xs:decimal"/>
+      <xs:element name="double" type="xs:double"/>
+      <xs:element name="duration" type="xs:duration"/>
+      <xs:element name="float" type="xs:float"/>
+      <xs:element name="guid" type="xs:string"/>
+      <xs:element name="int" type="xs:int"/>
+      <xs:element name="long" type="xs:long"/>
+      <xs:element name="short" type="xs:short"/>
+      <xs:element name="string" type="xs:string"/>
+      <xs:element name="unsignedByte" type="xs:short"/>
+      <xs:element name="unsignedInt" type="xs:long"/>
+      <xs:element name="unsignedLong" type="xs:integer"/>
+      <xs:element name="unsignedShort" type="xs:int"/>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://inSwitch.honovi.net/types" version="1.0" xmlns:tns="http://inSwitch.honovi.net/types" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="ActionType" type="tns:ActionType"/>
+      <xs:element name="AddressSignalingType" type="tns:AddressSignalingType"/>
+      <xs:element name="ArrayOfDN" type="tns:ArrayOfDN"/>
+      <xs:element name="ArrayOfEquipment" type="tns:ArrayOfEquipment"/>
+      <xs:element name="ArrayOfServiceApplicationServer" type="tns:ArrayOfServiceApplicationServer"/>
+      <xs:element name="DN" type="tns:DN"/>
+      <xs:element name="EchoCancellerType" type="tns:EchoCancellerType"/>
+      <xs:element name="Equipment" type="tns:Equipment"/>
+      <xs:element name="HuntSequenceType" type="tns:HuntSequenceType"/>
+      <xs:element name="NumberActionType" type="tns:NumberActionType"/>
+      <xs:element name="OfficeClassType" type="tns:OfficeClassType"/>
+      <xs:element name="PRIDNType" type="tns:PRIDNType"/>
+      <xs:element name="ServiceApplicationServer" type="tns:ServiceApplicationServer"/>
+      <xs:element name="Switch" type="tns:Switch"/>
+      <xs:element name="TrafficClassType" type="tns:TrafficClassType"/>
+      <xs:element name="TrafficUseType" type="tns:TrafficUseType"/>
+      <xs:element name="TrunkBitRateType" type="tns:TrunkBitRateType"/>
+      <xs:element name="TrunkCircuit" type="tns:TrunkCircuit"/>
+      <xs:element name="TrunkFeature" type="tns:TrunkFeature"/>
+      <xs:complexType name="TrunkCircuit">
+        <xs:sequence>
+          <xs:element name="ParentCompanyCode" nillable="true" type="xs:string"/>
+          <xs:element name="OrderCode" nillable="true" type="xs:string"/>
+          <xs:element name="VersionNumber" type="xs:int"/>
+          <xs:element name="Action" nillable="true" type="xs:string"/>
+          <xs:element name="OperationalSupportSystem" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ASROrder" type="xs:string"/>
+          <xs:element minOccurs="0" name="PlantDueDate" type="xs:anySimpleType"/>
+          <xs:element minOccurs="0" name="DueDate" type="xs:anySimpleType"/>
+          <xs:element minOccurs="0" name="ReleaseDate" type="xs:anySimpleType"/>
+          <xs:element minOccurs="0" name="TGSN" type="xs:string"/>
+          <xs:element minOccurs="0" name="TwoSix" type="xs:string"/>
+          <xs:element minOccurs="0" name="TrafficClass" type="tns:TrafficClassType"/>
+          <xs:element minOccurs="0" name="TrafficUse" type="tns:TrafficUseType"/>
+          <xs:element minOccurs="0" name="Modifier" type="xs:string"/>
+          <xs:element minOccurs="0" name="TrunkBitRate" type="tns:TrunkBitRateType"/>
+          <xs:element minOccurs="0" name="ActualSize" type="xs:int"/>
+          <xs:element minOccurs="0" name="INAC" type="xs:string"/>
+          <xs:element minOccurs="0" name="Note" type="xs:string"/>
+          <xs:element minOccurs="0" name="CustomerName" type="xs:string"/>
+          <xs:element minOccurs="0" name="CustomerID" type="xs:string"/>
+          <xs:element minOccurs="0" name="CICCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="SIPIndicator" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="CLCI" type="xs:string"/>
+          <xs:element minOccurs="0" name="PartialActionIndicator" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="PRICircuitIndicator" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="GlareYieldCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="OrderSize" type="xs:int"/>
+          <xs:element minOccurs="0" name="ProjectGroup" type="xs:string"/>
+          <xs:element name="TrunkFeature" nillable="true" type="tns:TrunkFeature"/>
+          <xs:element name="ASideSwitch" nillable="true" type="tns:Switch"/>
+          <xs:element name="ZSideSwitch" nillable="true" type="tns:Switch"/>
+          <xs:element minOccurs="0" name="ServiceApplicationServerList" type="tns:ArrayOfServiceApplicationServer"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="DN">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NPA" type="xs:string"/>
+          <xs:element minOccurs="0" name="NXX" type="xs:string"/>
+          <xs:element name="LineNumber" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Action" type="tns:NumberActionType"/>
+          <xs:element minOccurs="0" name="ServiceType" type="tns:PRIDNType"/>
+          <xs:element minOccurs="0" name="Quantity" type="xs:short"/>
+          <xs:element minOccurs="0" name="PortedIndicator" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="GroupNumber" type="xs:int"/>
+          <xs:element minOccurs="0" name="GroupSize" type="xs:short"/>
+          <xs:element minOccurs="0" name="ServiceID" type="xs:string"/>
+          <xs:element minOccurs="0" name="DeleteDigits" type="xs:int"/>
+          <xs:element minOccurs="0" name="PrefixDigits" type="xs:string"/>
+          <xs:element minOccurs="0" name="ReplaceDigits" type="xs:string"/>
+          <xs:element minOccurs="0" name="SentDigits" type="xs:short"/>
+          <xs:element minOccurs="0" name="CircuitBaseCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="CircuitSuffixArray" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Switch">
+        <xs:sequence>
+          <xs:element name="SwitchCLLI" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="CLCISwitchCLLI" type="xs:string"/>
+          <xs:element minOccurs="0" name="TrunkGroupName" type="xs:string"/>
+          <xs:element minOccurs="0" name="TrunkGroupNumber" type="xs:int"/>
+          <xs:element minOccurs="0" name="AddressSignaling" type="tns:AddressSignalingType"/>
+          <xs:element minOccurs="0" name="NetworkNumber" type="xs:short"/>
+          <xs:element minOccurs="0" name="ClusterNumber" type="xs:short"/>
+          <xs:element minOccurs="0" name="MemberNumber" type="xs:short"/>
+          <xs:element minOccurs="0" name="EchoCanceller" type="tns:EchoCancellerType"/>
+          <xs:element minOccurs="0" name="OfficeClass" type="tns:OfficeClassType"/>
+          <xs:element minOccurs="0" name="HuntSequence" type="tns:HuntSequenceType"/>
+          <xs:element minOccurs="0" name="CustomerServiceID" type="xs:string"/>
+          <xs:element minOccurs="0" name="EquipmentList" type="tns:ArrayOfEquipment"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="TrunkFeature">
+        <xs:sequence>
+          <xs:element name="AZCode" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="PRIType" type="xs:string"/>
+          <xs:element minOccurs="0" name="PRIQuantity" type="xs:short"/>
+          <xs:element minOccurs="0" name="NI" type="xs:short"/>
+          <xs:element minOccurs="0" name="FacilityAssignedIndicator" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="BackupDChannelIndicator" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="Direction" type="xs:string"/>
+          <xs:element minOccurs="0" name="HuntSequence" type="tns:HuntSequenceType"/>
+          <xs:element minOccurs="0" name="CallerIDScreeningIndicator" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="CallerNumberDeliverIndicator" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="CallingNameDeliverIndicator" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="CallingNumberInBoundIndicator" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="CallingNameInBoundIndicator" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="StationBillingIndicator" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="TwoBTransferIndicator" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="ReleaseLinkIndicator" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="BillingDN" type="xs:string"/>
+          <xs:element minOccurs="0" name="PilotDN" type="xs:string"/>
+          <xs:element minOccurs="0" name="AlternateDN" type="xs:string"/>
+          <xs:element minOccurs="0" name="OverflowDN" type="xs:string"/>
+          <xs:element minOccurs="0" name="EmergencyDN" type="xs:string"/>
+          <xs:element minOccurs="0" name="PBXEquipment" type="xs:string"/>
+          <xs:element minOccurs="0" name="SL100ProfileIndicator" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="PICCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="TwoPICCode" type="xs:string"/>
+          <xs:element minOccurs="0" name="GroupInboundSize" type="xs:short"/>
+          <xs:element minOccurs="0" name="GroupOutBoundSize" type="xs:short"/>
+          <xs:element minOccurs="0" name="BidirectionalSizeIndicator" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="CallingDisplayChangeIndicator" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="PBXShortName" type="xs:string"/>
+          <xs:element minOccurs="0" name="PBXLongName" type="xs:string"/>
+          <xs:element minOccurs="0" name="DedicatedRealmIndicator" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="ServiceDomainName" type="xs:string"/>
+          <xs:element minOccurs="0" name="ServiceUserName" type="xs:string"/>
+          <xs:element minOccurs="0" name="ServicePassword" type="xs:string"/>
+          <xs:element minOccurs="0" name="ServicePackage" type="xs:string"/>
+          <xs:element minOccurs="0" name="ApplicationServerName" type="xs:string"/>
+          <xs:element minOccurs="0" name="SessionManagerName" type="xs:string"/>
+          <xs:element minOccurs="0" name="TrustedIPAddress" type="xs:string"/>
+          <xs:element minOccurs="0" name="TrustedRealmName" type="xs:string"/>
+          <xs:element minOccurs="0" name="UntrustedIPAddress" type="xs:string"/>
+          <xs:element minOccurs="0" name="UntrustedRealmName" type="xs:string"/>
+          <xs:element minOccurs="0" name="AgentOneIPAddress" type="xs:string"/>
+          <xs:element minOccurs="0" name="AgentTwoIPAddress" type="xs:string"/>
+          <xs:element minOccurs="0" name="DNISIndicator" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="FailoverOptionDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="CallDistributionOption" type="xs:string"/>
+          <xs:element minOccurs="0" name="TLSIndicator" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="AccessTypeDescription" type="xs:string"/>
+          <xs:element minOccurs="0" name="DNList" type="tns:ArrayOfDN"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfDN">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="DN" nillable="true" type="tns:DN"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfEquipment">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="Equipment" nillable="true" type="tns:Equipment"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Equipment">
+        <xs:sequence>
+          <xs:element name="LenType" nillable="true" type="xs:string"/>
+          <xs:element name="LowLen" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="Quantity" type="xs:int"/>
+          <xs:element minOccurs="0" name="LowMember" type="xs:int"/>
+          <xs:element minOccurs="0" name="LowCIC" type="xs:int"/>
+          <xs:element minOccurs="0" name="CircuitCode" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ServiceApplicationServer">
+        <xs:sequence>
+          <xs:element name="ApplicationServerName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="TrustedIPAddress" type="xs:string"/>
+          <xs:element minOccurs="0" name="TrustedRealmName" type="xs:string"/>
+          <xs:element minOccurs="0" name="UntrustedIPAddress" type="xs:string"/>
+          <xs:element minOccurs="0" name="UntrustedRealmName" type="xs:string"/>
+          <xs:element minOccurs="0" name="RegionCode" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="ArrayOfServiceApplicationServer">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="ServiceApplicationServer" nillable="true" type="tns:ServiceApplicationServer"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="ActionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Activate"/>
+          <xs:enumeration value="Disconnect"/>
+          <xs:enumeration value="Establish"/>
+          <xs:enumeration value="Inactivate"/>
+          <xs:enumeration value="Modify"/>
+          <xs:enumeration value="MinPrMthCancel"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="TrafficClassType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="AdvancedFinal"/>
+          <xs:enumeration value="DirectFinal"/>
+          <xs:enumeration value="NonhierarchialRouting"/>
+          <xs:enumeration value="ExpedientRouteAF"/>
+          <xs:enumeration value="ParallelProtectiveHigh"/>
+          <xs:enumeration value="IntermediateHigh"/>
+          <xs:enumeration value="Administrative"/>
+          <xs:enumeration value="NetworkManagement"/>
+          <xs:enumeration value="PrimaryHigh"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="TrafficUseType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Announcement"/>
+          <xs:enumeration value="OperatorServiceAP"/>
+          <xs:enumeration value="TandemAccessCAMA"/>
+          <xs:enumeration value="OperatorServiceCP"/>
+          <xs:enumeration value="CoinSupervisory"/>
+          <xs:enumeration value="TandemConnectingCAMA"/>
+          <xs:enumeration value="ConeZone"/>
+          <xs:enumeration value="DirectoryAssistance"/>
+          <xs:enumeration value="InteractiveServicesAccess"/>
+          <xs:enumeration value="TandemAccessLAMA"/>
+          <xs:enumeration value="TandemConnectingLAMA"/>
+          <xs:enumeration value="DirectInterLATAFGB"/>
+          <xs:enumeration value="DirectInterLATAFGD"/>
+          <xs:enumeration value="DirectConnectingRadio"/>
+          <xs:enumeration value="CellularMobileDirectConnecting"/>
+          <xs:enumeration value="MobileEmergencyCallRouting"/>
+          <xs:enumeration value="CellularOperatingConnecting"/>
+          <xs:enumeration value="IntertandemCellular"/>
+          <xs:enumeration value="EmergencyService"/>
+          <xs:enumeration value="EmergencyServiceEnhanced"/>
+          <xs:enumeration value="EndOfficeTandem"/>
+          <xs:enumeration value="DirectIntraLATA2Way"/>
+          <xs:enumeration value="FeatureActivationSwitchOrPeripheral"/>
+          <xs:enumeration value="FeatureActivationPeripheralOrPeripheral"/>
+          <xs:enumeration value="FeatureActivationPeripheralOrWireless"/>
+          <xs:enumeration value="EndOfficeTrunkGateway"/>
+          <xs:enumeration value="CustomerSwitchExchangeCarrierGateway"/>
+          <xs:enumeration value="CustomerSwitchExchangeCarrierTandem"/>
+          <xs:enumeration value="CustomerSwitchExchangeCarrierEndOffice"/>
+          <xs:enumeration value="CustomerSwitchExchangeCarrierTandemOS"/>
+          <xs:enumeration value="CustomerSwitchExchangeCarrierEndOfficeOS"/>
+          <xs:enumeration value="CustomerSwitchExchangeCarrierE911Tandem"/>
+          <xs:enumeration value="TandemTrunkGateway"/>
+          <xs:enumeration value="IntraendOffice"/>
+          <xs:enumeration value="InterendOffice"/>
+          <xs:enumeration value="InterendOfficeMarker"/>
+          <xs:enumeration value="OperatorServiceIP"/>
+          <xs:enumeration value="Intercept"/>
+          <xs:enumeration value="InterendOfficeCodeSharing"/>
+          <xs:enumeration value="IntertandemToll"/>
+          <xs:enumeration value="IntraendOfficeJunctor"/>
+          <xs:enumeration value="IntratandemLoopAround"/>
+          <xs:enumeration value="TrunkwithLineTreatmentTWLT"/>
+          <xs:enumeration value="OperatorAccessCallback"/>
+          <xs:enumeration value="MixedFeatureGroupB"/>
+          <xs:enumeration value="TandemAccessMixedFGD"/>
+          <xs:enumeration value="Miscellaneous"/>
+          <xs:enumeration value="OperatorAccessManual"/>
+          <xs:enumeration value="HighSpeedMessagePipe"/>
+          <xs:enumeration value="ImprovedMobileTelephoneService"/>
+          <xs:enumeration value="IntertandemLocal"/>
+          <xs:enumeration value="TandemIntraLATAConnecting"/>
+          <xs:enumeration value="TandemInterLATAConnecting"/>
+          <xs:enumeration value="TandemConnecting"/>
+          <xs:enumeration value="NetworkServices"/>
+          <xs:enumeration value="OperatorAccessOperatorAssistance"/>
+          <xs:enumeration value="OperatorFeatureGroupD"/>
+          <xs:enumeration value="OperatorAssisted"/>
+          <xs:enumeration value="Official"/>
+          <xs:enumeration value="TandemConnectingLocal2Way"/>
+          <xs:enumeration value="TandemAccessOperatorJunctor"/>
+          <xs:enumeration value="OperatorConnecting2Way"/>
+          <xs:enumeration value="OpticalRemote"/>
+          <xs:enumeration value="Overseas"/>
+          <xs:enumeration value="PublicAnnouncement"/>
+          <xs:enumeration value="Paging"/>
+          <xs:enumeration value="PrimaryRateISDN"/>
+          <xs:enumeration value="PacketSwitch"/>
+          <xs:enumeration value="PermanentSignal"/>
+          <xs:enumeration value="AccessTesting"/>
+          <xs:enumeration value="RepairServiceandBusinessOffice"/>
+          <xs:enumeration value="OperatorAccessRecordingCompleting"/>
+          <xs:enumeration value="RequestedInformation"/>
+          <xs:enumeration value="RemoteSwitchChannelVoice"/>
+          <xs:enumeration value="RemoteSwitchHICAPConnection"/>
+          <xs:enumeration value="RateandRoute"/>
+          <xs:enumeration value="RepairService"/>
+          <xs:enumeration value="SignalingLink"/>
+          <xs:enumeration value="SignalingLinkAccessPurchased"/>
+          <xs:enumeration value="SignalingLinkNonAccessPurchased"/>
+          <xs:enumeration value="TandemAccessServicePosition"/>
+          <xs:enumeration value="TandemInterLATAConnectingFGB"/>
+          <xs:enumeration value="TandemCompletingToll"/>
+          <xs:enumeration value="TandemInterLATAConnectingFGD"/>
+          <xs:enumeration value="InterendOfficeToll"/>
+          <xs:enumeration value="CellularMobileTandemConnecting"/>
+          <xs:enumeration value="TandemCompletingLocal"/>
+          <xs:enumeration value="ServicePlatformTandemConnecting"/>
+          <xs:enumeration value="Time"/>
+          <xs:enumeration value="TandemCompletingMultipled"/>
+          <xs:enumeration value="TandemAccessLocal"/>
+          <xs:enumeration value="OperatorServiceTP"/>
+          <xs:enumeration value="OperatorCompleting"/>
+          <xs:enumeration value="TandemAccessOperatorSwitched"/>
+          <xs:enumeration value="TandemIntraLATAConnecting2Way"/>
+          <xs:enumeration value="VacentCodeOperatorOnly"/>
+          <xs:enumeration value="Verification"/>
+          <xs:enumeration value="VoiceStorage"/>
+          <xs:enumeration value="Weather"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="TrunkBitRateType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="r56K"/>
+          <xs:enumeration value="r64K"/>
+          <xs:enumeration value="r2_488320G"/>
+          <xs:enumeration value="r90M"/>
+          <xs:enumeration value="r44_736M"/>
+          <xs:enumeration value="r100M"/>
+          <xs:enumeration value="r155_520M"/>
+          <xs:enumeration value="r38_4K"/>
+          <xs:enumeration value="r128K"/>
+          <xs:enumeration value="r144K"/>
+          <xs:enumeration value="r622_080M"/>
+          <xs:enumeration value="r192K"/>
+          <xs:enumeration value="r22_368M"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="HuntSequenceType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="LeastIdle"/>
+          <xs:enumeration value="MostIdle"/>
+          <xs:enumeration value="AscendingSequential"/>
+          <xs:enumeration value="DescendingSequential"/>
+          <xs:enumeration value="AscendingSequentialFromLastReleased"/>
+          <xs:enumeration value="DescendingSequentialFromLastReleased"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="NumberActionType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="BTN"/>
+          <xs:enumeration value="Disconnect"/>
+          <xs:enumeration value="Establish"/>
+          <xs:enumeration value="PortIn"/>
+          <xs:enumeration value="Change"/>
+          <xs:enumeration value="PortOut"/>
+          <xs:enumeration value="Reserve"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="PRIDNType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Unknown"/>
+          <xs:enumeration value="DirectInwardDial"/>
+          <xs:enumeration value="DirectOutwardDial"/>
+          <xs:enumeration value="Incoming"/>
+          <xs:enumeration value="Outgoing"/>
+          <xs:enumeration value="Tollfree"/>
+          <xs:enumeration value="Pilot"/>
+          <xs:enumeration value="BillNumber"/>
+          <xs:enumeration value="TestNumber"/>
+          <xs:enumeration value="OverDN"/>
+          <xs:enumeration value="EmergencyDN"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="AddressSignalingType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="NoSignaling"/>
+          <xs:enumeration value="R1SignalingSystem"/>
+          <xs:enumeration value="R2SignalingSystem"/>
+          <xs:enumeration value="CCITT5Signaling"/>
+          <xs:enumeration value="CCITT6Signaling"/>
+          <xs:enumeration value="ANSIT1X1SS7"/>
+          <xs:enumeration value="Automatic"/>
+          <xs:enumeration value="CCITTSS7"/>
+          <xs:enumeration value="CommonChannelCCIS"/>
+          <xs:enumeration value="DialPulse"/>
+          <xs:enumeration value="EnhancedMF"/>
+          <xs:enumeration value="FrequencyShift"/>
+          <xs:enumeration value="BearerIndependentBICC"/>
+          <xs:enumeration value="CCITTSS7ISUP"/>
+          <xs:enumeration value="DTMF12Combinations"/>
+          <xs:enumeration value="DTMF16Combinations"/>
+          <xs:enumeration value="MultifrequencyPulse"/>
+          <xs:enumeration value="NonSpecific"/>
+          <xs:enumeration value="PanelCallIndicatorPCI"/>
+          <xs:enumeration value="RingDown"/>
+          <xs:enumeration value="Straightforward"/>
+          <xs:enumeration value="Reveritive"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="EchoCancellerType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="EXTERNAL"/>
+          <xs:enumeration value="INNOTONE"/>
+          <xs:enumeration value="INTERNAL"/>
+          <xs:enumeration value="UNEQ"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="OfficeClassType">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Undefined"/>
+          <xs:enumeration value="Class1"/>
+          <xs:enumeration value="Class2"/>
+          <xs:enumeration value="Class3"/>
+          <xs:enumeration value="Class4"/>
+          <xs:enumeration value="Class5"/>
+          <xs:enumeration value="NPTandem"/>
+          <xs:enumeration value="NPTDMOrNonTDM"/>
+          <xs:enumeration value="Gateway"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="PutTrunkCircuitOrderResponse">
+    <wsdl:part element="tns:PutTrunkCircuitOrderResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PutTrunkCircuitOrder">
+    <wsdl:part element="tns:PutTrunkCircuitOrder" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CancelTrunkCircuitOrderProjectGroupResponse">
+    <wsdl:part element="tns:CancelTrunkCircuitOrderProjectGroupResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CancelTrunkCircuitOrderProjectGroup">
+    <wsdl:part element="tns:CancelTrunkCircuitOrderProjectGroup" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ITrunkCircuitOrderService">
+    <wsdl:operation name="CancelTrunkCircuitOrderProjectGroup">
+      <wsdl:input message="tns:CancelTrunkCircuitOrderProjectGroup" name="CancelTrunkCircuitOrderProjectGroup" wsam:Action="http://tempuri.org/ITrunkCircuitOrderService/CancelTrunkCircuitOrderProjectGroup" wsaw:Action="http://tempuri.org/ITrunkCircuitOrderService/CancelTrunkCircuitOrderProjectGroup"></wsdl:input>
+      <wsdl:output message="tns:CancelTrunkCircuitOrderProjectGroupResponse" name="CancelTrunkCircuitOrderProjectGroupResponse" wsam:Action="http://tempuri.org/ITrunkCircuitOrderService/CancelTrunkCircuitOrderProjectGroupResponse" wsaw:Action="http://tempuri.org/ITrunkCircuitOrderService/CancelTrunkCircuitOrderProjectGroupResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PutTrunkCircuitOrder">
+      <wsdl:input message="tns:PutTrunkCircuitOrder" name="PutTrunkCircuitOrder" wsam:Action="http://tempuri.org/ITrunkCircuitOrderService/PutTrunkCircuitOrder" wsaw:Action="http://tempuri.org/ITrunkCircuitOrderService/PutTrunkCircuitOrder"></wsdl:input>
+      <wsdl:output message="tns:PutTrunkCircuitOrderResponse" name="PutTrunkCircuitOrderResponse" wsam:Action="http://tempuri.org/ITrunkCircuitOrderService/PutTrunkCircuitOrderResponse" wsaw:Action="http://tempuri.org/ITrunkCircuitOrderService/PutTrunkCircuitOrderResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TrunkCircuitOrderServiceSoapBinding" type="tns:ITrunkCircuitOrderService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="CancelTrunkCircuitOrderProjectGroup">
+      <soap:operation soapAction="http://tempuri.org/ITrunkCircuitOrderService/CancelTrunkCircuitOrderProjectGroup" style="document"/>
+      <wsdl:input name="CancelTrunkCircuitOrderProjectGroup">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CancelTrunkCircuitOrderProjectGroupResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PutTrunkCircuitOrder">
+      <soap:operation soapAction="http://tempuri.org/ITrunkCircuitOrderService/PutTrunkCircuitOrder" style="document"/>
+      <wsdl:input name="PutTrunkCircuitOrder">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="PutTrunkCircuitOrderResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TrunkCircuitOrderService">
+    <wsdl:port binding="tns:TrunkCircuitOrderServiceSoapBinding" name="BasicHttpBinding_ITrunkCircuitOrderService">
+      <soap:address location="http://localhost:8080/TrunkCircuitOrderService/TrunkCircuitOrderService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/TrunkCircuitOrderService/TrunkCircuitOrderService</con:endpoint></con:endpoints><con:operation id="96aef518-5713-49d6-93e9-be803115116b" isOneWay="false" action="http://tempuri.org/ITrunkCircuitOrderService/CancelTrunkCircuitOrderProjectGroup" name="CancelTrunkCircuitOrderProjectGroup" bindingOperationName="CancelTrunkCircuitOrderProjectGroup" type="Request-Response" outputName="CancelTrunkCircuitOrderProjectGroupResponse" inputName="CancelTrunkCircuitOrderProjectGroup" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="594d1413-447f-47e1-921e-004850e96470" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/TrunkCircuitOrderService/TrunkCircuitOrderService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:CancelTrunkCircuitOrderProjectGroup>\r
+         <!--Optional:-->\r
+         <tem:ProjectGroup>?</tem:ProjectGroup>\r
+      </tem:CancelTrunkCircuitOrderProjectGroup>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ITrunkCircuitOrderService/CancelTrunkCircuitOrderProjectGroup"/></con:call></con:operation><con:operation id="9c078ad7-a85c-437a-bd1e-acf5e2a1048e" isOneWay="false" action="http://tempuri.org/ITrunkCircuitOrderService/PutTrunkCircuitOrder" name="PutTrunkCircuitOrder" bindingOperationName="PutTrunkCircuitOrder" type="Request-Response" outputName="PutTrunkCircuitOrderResponse" inputName="PutTrunkCircuitOrder" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6412d0cc-4291-4667-9425-1fbf9ef4cb42" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/TrunkCircuitOrderService/TrunkCircuitOrderService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:typ="http://inSwitch.honovi.net/types">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:PutTrunkCircuitOrder>\r
+      </tem:PutTrunkCircuitOrder>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/ITrunkCircuitOrderService/PutTrunkCircuitOrder"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

@@ -1,0 +1,11 @@
+
+
+Problem:
+javax.xml.ws.WebServiceException: org.apache.cxf.service.factory.ServiceConstructionException: Failed to create service.
+Caused by: javax.wsdl.WSDLException: WSDLException (at /soap:Envelope): faultCode=INVALID_WSDL: Expected element '{http://schemas.xmlsoap.org/wsdl/}definitions'.
+
+Root cause: Missing ?wsdl on the endpoint
+		String wsUrl = "http://localhost:8080/TrunkCircuitOrderService/TrunkCircuitOrderService";
+
+Solution:
+String wsUrl = "http://localhost:8080/TrunkCircuitOrderService/TrunkCircuitOrderService?wsdl";
